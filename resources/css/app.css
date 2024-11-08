@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+/* En tu archivo CSS */
+.bg-custom-gray {
+    background-color: rgb(182, 187, 193);
+}
+
+.bg-custom2-gray {
+    background-color: rgb(165, 171, 177);
+}
+
+/* color ligero */
+.bg-custom3-gray {
+    background-color: rgb(199, 199, 199);
+}
+
+.bg-label-gray {
+    background-color: rgb(155, 182, 252);
+}
+
+.bg-botton-blue {
+    background-color: rgb(32, 113, 189);
+}
