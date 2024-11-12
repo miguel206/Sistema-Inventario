@@ -142,7 +142,7 @@
                                                 </svg>
                                             </x-button>
 
-                                            @role('admin')
+                                         {{--   @role('admin')  --}}
                                                 @if ($bien->estado === 'RESGUARDO')
                                                     <x-button class="bg-sky-700 px-1 opacity-50" disabled
                                                         wire:click="openModal({{ $bien->id }})">
@@ -187,7 +187,7 @@
 
                                                     </x-button>
                                                 @endif
-                                            @endrole
+                                          {{--  @endrole  --}}
 
 
 
@@ -371,21 +371,22 @@
                                                 @enderror
                                             </div>
 
-                                            <div class="flex items-center">
-                                                <label class="mr-3 text-sm font-medium text-gray-900">Estado:</label>
-                                                <div class="space-x-2 items-baseline">
-                                                    <button wire:click="setEstado('DISPONIBLE')"
-                                                        class="px-4 py-2 rounded 
-                                                               {{ $edit_estado === 'DISPONIBLE' ? 'bg-green-400 text-white' : 'bg-gray-200' }}">
-                                                        DISPONIBLE
-                                                    </button>
-                                                    <button wire:click="setEstado('MANTENIMIENTO')"
-                                                        class="px-4 py-2 rounded 
-                                                               {{ $edit_estado === 'MANTENIMIENTO' ? 'bg-yellow-400 text-white' : 'bg-gray-200' }}">
-                                                        MANTENIMIENTO
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            <div class="flex flex-col items-start">
+    <label class="mb-2 text-sm font-semibold text-gray-900">Estado:</label>
+    <button wire:click="setEstado('DISPONIBLE')"
+        class="w-full px-3 py-2 mb-2 rounded-md text-xs font-semibold shadow-sm transition-colors duration-300
+               {{ $edit_estado === 'DISPONIBLE' ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300' }}">
+        DISPONIBLE
+    </button>
+    <button wire:click="setEstado('MANTENIMIENTO')"
+        class="w-full px-3 py-2 rounded-md text-xs font-semibold shadow-sm transition-colors duration-300
+               {{ $edit_estado === 'MANTENIMIENTO' ? 'bg-yellow-500 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300' }}">
+        MANTENIMIENTO
+    </button>
+</div>
+
+
+
 
                                         </div>
                                     </div>
@@ -517,7 +518,7 @@
 
                     <!-- Modal de DELETE-->
                     <x-dialog-modal wire:model="showModalEstado">
-                        {{-- <form wire:submit.prevent="updateEstado" enctype="multipart/form-data"> --}}
+                        <form wire:submit.prevent="updateEstado" enctype="multipart/form-data"> 
                         <x-slot name="title">
                             Baja de un bien
                         </x-slot>
@@ -543,14 +544,29 @@
                                         <span class="text-red-500">{{ $message }}</span>
                                     @enderror
 
-                                    <label for="documento"
-                                        class="block mb-2 pt-2 text-sm font-medium text-gray-900">Documento</label>
-                                    <input type="file" wire:model.live="documento" id="documento"
-                                        accept="application/pdf"
-                                        class="p-2 ring-1 ring-inset ring-gray-300 bg-gray-100 text-gray-900 text-sm rounded-lg block w-full focus:ring-blue-500 focus:border-blue-500">
-                                    @error('documento')
-                                        <span class="text-red-500">{{ $message }}</span>
-                                    @enderror
+                                     <!-- Campo de Documento (opcional) -->
+                                     <label for="documento" class="block mb-2 pt-2 text-sm font-medium text-gray-900">Documento (opcional)</label>
+
+<!-- Ícono personalizado para cargar archivo -->
+<div class="flex items-center">
+    <label for="documento" class="flex items-center cursor-pointer p-2 bg-gray-100 rounded-lg hover:bg-gray-200 ring-1 ring-inset ring-gray-300 focus-within:ring-blue-500">
+        <!-- Ícono de carga -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2a5 5 0 0 1 5 5v6.586l1.707-1.707a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L11 13.586V7a3 3 0 1 0-6 0v10H3V7a5 5 0 0 1 5-5h4z" />
+            <path d="M17 21a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM11 21a1 1 0 1 1 2 0 1 1 0 0 1-2 0z" />
+        </svg>
+        <span class="ml-2 text-gray-700 text-sm">Seleccionar archivo</span>
+    </label>
+    
+    <!-- Campo input escondido -->
+    <input type="file" wire:model="documento" id="documento" accept="application/pdf" class="hidden">
+</div>
+
+<!-- Mensaje de error -->
+@error('documento')
+    <span class="text-red-500">{{ $message }}</span>
+@enderror
+
 
                                     <label for="clave"
                                         class="block mb-2 pt-2 text-sm font-medium text-gray-900">Clave</label>

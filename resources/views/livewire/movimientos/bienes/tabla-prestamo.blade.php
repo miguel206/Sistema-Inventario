@@ -4,7 +4,7 @@
             <div class="inline-block min-w-full sm:px-6 lg:px-8 bg-gray-200">
                 <div class="overflow-hidden rounded-lg shadow-md bg-gray-200 ">
                     <h1 class="px-6 pt-3 text-center text-2xl font-bold text-gray-800 tracking-wider">
-                        Lista de Préstamos de Bienes</h1>
+                        Lista de Resguardo de Bienes</h1>
 
                     <div class="flex justify-between mb-2">
                         <div class="flex">

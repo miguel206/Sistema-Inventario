@@ -313,12 +313,12 @@ class Bienes extends Component
     // Función que contiene las reglas de validación
     protected function rules2()
     {
-        return [
-            'observaciones' => 'required|string|max:255',
-            'fecha_baja' => 'required|date',
-            'documento' => 'required|file|mimes:pdf|max:5048', // Validación del documento
-            'clave' => 'required|string',
-        ];
+    return [
+        'observaciones' => 'required|string|max:255',
+        'fecha_baja' => 'required|date',
+        'documento' => 'nullable|file|mimes:pdf|max:5048', // Ahora el documento es opcional
+        'clave' => 'required|string',
+    ];
     }
 
     // Función que contiene los mensajes de validación personalizados
@@ -330,7 +330,7 @@ class Bienes extends Component
             'observaciones.max' => 'Las observaciones no deben exceder los 255 caracteres.',
             'fecha_baja.required' => 'La fecha de baja es obligatoria.',
             'fecha_baja.date' => 'La fecha de baja debe ser una fecha válida.',
-            'documento.required' => 'El documento es obligatorio.',
+            //'documento.required' => 'El documento es obligatorio.',
             'documento.file' => 'El documento debe ser un archivo.',
             'documento.mimes' => 'El documento debe ser un archivo PDF.',
             'documento.max' => 'El documento no debe exceder los 5MB.',
@@ -360,9 +360,13 @@ class Bienes extends Component
             }
 
             // Guardar el documento
-            $path = $this->documento->store('documentos', 'public');
-            if (!$path) {
-                throw new \Exception('Error al guardar el documento.');
+            $path = null;
+
+            if ($this->documento) {
+                $path = $this->documento->store('documentos', 'public');
+                if (!$path) {
+                    throw new \Exception('Error al guardar el documento.');
+                }
             }
 
             // Actualizar el bien

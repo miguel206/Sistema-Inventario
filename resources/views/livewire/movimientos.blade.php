@@ -39,7 +39,7 @@
                         <div class="flex">
                             <div class="flex">
                                 {{-- <h1 class="mx-4 mt-2">Selecciona una Opción:</h1> --}}
-                                <<select class="mx-4 pl-2 pr-8 rounded-md" wire:model.live="opcionSeleccionada">
+                                <select class="mx-4 pl-2 pr-8 rounded-md" wire:model.live="opcionSeleccionada">
                                         <option value="" disabled selected>Seleccionar Movimiento</option>
                                         <option value="resguardo">Resguardo de Equipo</option>
                                         <option value="devolucion">Devolución de Equipo</option>
