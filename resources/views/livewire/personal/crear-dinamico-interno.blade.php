@@ -37,8 +37,8 @@
                                 #{{ $loop->iteration }}</label>
 
                             <div>
-                                <label for="rfc_{{ $index }}"
-                                    class="block mb-2 pt-3 text-sm font-medium text-gray-900">RFC</label>
+                            <label for="rfc_{{ $index }}" class="block mb-2 pt-3 text-sm font-medium text-gray-900">RFC (Opcional)</label>
+
                                 <input type="text" wire:model.live="workers.{{ $index }}.rfc"
                                     id="rfc{{ $index }}"
                                     class="shadow-sm text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">

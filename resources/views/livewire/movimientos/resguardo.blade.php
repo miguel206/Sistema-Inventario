@@ -4,7 +4,7 @@
             <div class="inline-block min-w-full sm:px-6 lg:px-8 bg-gray-200">
                 <div class="overflow-hidden rounded-lg shadow-md bg-gray-200 ">
                     <h1 class="px-6 pt-3 text-center text-2xl font-bold text-gray-800 tracking-wider">
-                        Lista de Resguardos de Equipos</h1>
+                        Lista de Resguardos de Bienes</h1>
 
                     <div class="flex justify-between mb-2">
                         <div class="flex">
@@ -107,7 +107,7 @@
                                         {{-- {{ $movimiento->tipo_moviento }} --}}
 
                                         @if ($movimiento->tipo_moviento == 'RESGUARDO')
-                                            <p>PRÉSTAMO</p>
+                                            <p>RESGUARDO</p>
                                         @elseif($movimiento->tipo_moviento == 'DEVOLUCION')
                                             <p>DEVOLUCIÓN</p>
                                         @elseif($movimiento->tipo_moviento == 'ACTUALIZACION')

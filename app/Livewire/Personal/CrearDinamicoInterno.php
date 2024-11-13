@@ -41,7 +41,7 @@ class CrearDinamicoInterno extends Component
     }
 
     protected $rules = [
-        'workers.*.rfc' => 'required|string|max:13',
+        'workers.*.rfc' => 'nullable|string', // O cualquier otra regla de validación opcional
         'fecha_ingreso' => 'required|date',
         'workers.*.nombre' => 'required|string|max:255',
         'workers.*.area' => 'required|string|in:Presidencia,Secretaria Ejecutiva,Secretaría Administrativa,Dirección Ejecutiva de Asociaciones Políticas,Dirección Ejecutiva de Organización Electoral,Dirección Ejecutiva de Educación Cívica y Capacitación,Dirección Ejecutiva Jurídica y de lo Contencioso,Dirección Ejecutiva de Participación Ciudadana,Unidad Técnica de Planeación,Unidad Técnica del Servicio Profesional Electoral,Unidad de Transparencia,Unidad Técnica de Comunicación Social,Unidad Técnica de Oficialía Electoral,Unidad Técnica de Servicios Informáticos,Unidad Técnica de Género y No Discriminación,Unidad Técnica de Asuntos Indígenas,Unidad Técnica de Vinculación con el INE,otro',
@@ -50,7 +50,7 @@ class CrearDinamicoInterno extends Component
 
 
     protected $messages = [
-        'workers.*.rfc.required' => 'RFC es obligatoria.',
+        //'workers.*.rfc.required' => 'RFC es obligatoria.',
         'workers.*.rfc.string' => 'El RFC debe ser una cadena de texto.',
         'workers.*.rfc.max' => 'El RFC no puede tener más de 13 caracteres.',
 
