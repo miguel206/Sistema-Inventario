@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Formato de Préstamo de Equipo</title>
+    <title>Formato de Resguardo de Equipo</title>
 
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
@@ -213,10 +213,10 @@
     <div class="container">
         <div class="p-6">
             <div class="header">
-                <h1>Formato de Préstamo de Equipo</h1>
-                <p>Instituto de Elecciones y Participación Ciudadana</p>
+                <h1>Formato de Resguardo de Equipos</h1>
+                <p>Instituto de Elecciones Y Participación Ciudadana</p>
                 <p>Secretaría Ejecutiva</p>
-                <p>Unidad de Servicios Informáticos Electorales</p>
+                <p>Unidad Tecnica De Servicios Informaticos</p>
             </div>
 
 

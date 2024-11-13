@@ -222,7 +222,7 @@
             //@this.on('swalConfirmation', (event) => {
             Swal.fire({
                 title: "¿Realizar prestamo?",
-                text: "Se registrara el prestamo de los bienes en el inventario",
+                text: "Se registrara el resguardo de los bienes en el inventario",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
